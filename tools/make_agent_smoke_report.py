@@ -25,7 +25,7 @@ def main() -> None:
     correct = sum(result.get("label") == result.get("true_relevance") for result in results)
     used_search = sum(bool(result.get("used_search")) for result in results)
 
-    title = f"Полный validation-прогон агента: {len(results)} кейсов"
+    title = f"Полный прогон агента на валидации: {len(results)} кейсов"
     lines = [
         f"# {title}",
         "",
@@ -39,21 +39,21 @@ def main() -> None:
         "",
         "Конфигурация:",
         "",
-        "- LLM-провайдер: RouterAI OpenAI-compatible API",
+        "- Провайдер LLM: RouterAI, OpenAI-совместимый API",
         "- Модель: deepseek/deepseek-v4-pro",
         "- Поиск: Serper",
-        "- Few-shot: top-3 похожих размеченных примера из train",
-        "- Eval-метки не использовались",
+        "- Примеры для подсказки: top-3 похожих размеченных примера из обучающей выборки",
+        "- Метки eval-множества не использовались",
         "",
         "Сводка:",
         "",
         f"- Завершено кейсов: {len(results)}",
         f"- Правильных ответов: {correct}/{len(results)}",
-        f"- Accuracy: {correct / len(results):.4f}",
+        f"- Точность (accuracy): {correct / len(results):.4f}",
         f"- Внешний поиск использован: {used_search}/{len(results)}",
         "- Статус выполнения: Python-ошибок нет; JSON-ответы успешно распарсились",
         "",
-        "Матрица ошибок в виде true -> agent:",
+        "Матрица ошибок в виде истинная метка -> метка агента:",
     ]
 
     counts: dict[str, int] = {}
