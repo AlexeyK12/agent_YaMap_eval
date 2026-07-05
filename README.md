@@ -1,18 +1,18 @@
-# DLS final project: Yandex Maps relevance
+# DLS Final Project: релевантность организаций на Яндекс.Картах
 
-## Project Result
+## Итог проекта
 
-This repository contains two complementary parts:
+В репозитории две основные части:
 
-1. **Strong non-agent baseline:** fine-tuned Russian transformer ensemble.
-   Best validation accuracy: **0.7067**.
-   Current best submission file: `notebooks/submission_ensemble.csv`.
+1. **Сильный бейзлайн без агента:** ensemble дообученных русскоязычных transformer-моделей.
+   Лучшая validation accuracy: **0.7067**.
+   Основной файл для submission: `notebooks/submission_ensemble.csv`.
 
-2. **Search-enabled LLM agent:** OpenAI-compatible RouterAI LLM + Serper search + lexical few-shot examples.
-   Full validation smoke run: **20 cases, 10 correct, accuracy 0.5000, search used in 7/20 cases, 0 runtime/JSON errors**.
-   Detailed report: `reports/agent_full_validation_20.md`.
+2. **LLM-агент с поиском:** RouterAI/OpenAI-compatible LLM + Serper search + few-shot примеры из train.
+   Полный validation-прогон агента: **20 кейсов, 10 правильных, accuracy 0.5000, поиск использован в 7/20 кейсов, runtime/JSON ошибок 0**.
+   Подробный отчёт: `reports/agent_full_validation_20.md`.
 
-Main conclusion: the agent is implemented and works technically, including external search, but it did **not** beat the strong transformer baseline on validation. The final project therefore follows the task option: build a strong baseline, implement a search-capable agent, and show that the agent did not provide stable quality improvement for this dataset.
+Главный вывод: агент реализован и технически работает, включая внешний поиск, но **не побил** сильный transformer baseline на validation. Поэтому итоговая позиция проекта: построен сильный бейзлайн, реализован агент с возможностью поиска, и показано, что в этой задаче агент не дал стабильного прироста качества.
 
 Рабочая задача: предсказывать релевантность организации запросу на Яндекс.Картах.
 
@@ -24,31 +24,31 @@ Main conclusion: the agent is implemented and works technically, including exter
 
 Основная метрика из задания - `accuracy`.
 
-## Quick Start For Review
+## Быстрый Запуск Для Проверки
 
-1. Create an environment and install dependencies:
+1. Установить зависимости:
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-2. Download the task data from the original Yandex Disk link and put files here:
+2. Скачать данные по ссылке из задания и положить файлы сюда:
 
 ```text
 data/data_for_train.jsonl
 data/data_for_eval.jsonl
 ```
 
-The raw data files are intentionally ignored by git because `data_for_train.jsonl` is larger than the normal GitHub file limit.
+Сырые данные специально игнорируются git, потому что `data_for_train.jsonl` больше обычного лимита GitHub.
 
-3. Create a private config:
+3. Создать приватный конфиг:
 
 ```powershell
 Copy-Item .env.example .env
 notepad .env
 ```
 
-Fill:
+Заполнить:
 
 ```text
 ROUTERAI_API_KEY=...
@@ -56,13 +56,13 @@ SERPER_API_KEY=...
 SEARCH_PROVIDER=serper
 ```
 
-4. Prepare agent JSONL files:
+4. Подготовить JSONL-файлы для агента:
 
 ```bash
 python src/prepare_agent_cases.py --validation-cases 100
 ```
 
-This writes:
+Команда создаст:
 
 ```text
 outputs/agent_fewshot_train_examples.jsonl
@@ -70,13 +70,13 @@ outputs/agent_validation_cases.jsonl
 outputs/agent_eval_cases.jsonl
 ```
 
-5. Check search only:
+5. Проверить только поисковый tool:
 
 ```bash
-python src/agent_runner.py --check-search --search-provider serper --search-query "cafe terrace Moscow"
+python src/agent_runner.py --check-search --search-provider serper --search-query "кафе с верандой Москва"
 ```
 
-6. Run a small validation agent smoke test:
+6. Запустить маленький validation smoke-test агента:
 
 ```bash
 python src/agent_runner.py \
@@ -89,7 +89,7 @@ python src/agent_runner.py \
   --evaluate
 ```
 
-7. Run agent on eval after validation is acceptable:
+7. Запустить агента на eval только после приемлемой validation-проверки:
 
 ```bash
 python src/agent_runner.py \
@@ -101,7 +101,7 @@ python src/agent_runner.py \
   --submission-csv outputs/submission_agent.csv
 ```
 
-## Baseline
+## Бейзлайн
 
 Первый воспроизводимый бейзлайн - TF-IDF по полям запроса и организации + `LinearSVC`.
 
@@ -131,7 +131,7 @@ python src/baseline_tfidf.py --classifier ridge --predict-eval
 
 Важно: `relevance_new` в eval не используем для подбора промптов/параметров. Для анализа ошибок и калибровки используем только train/valid split из `data_for_train.jsonl`.
 
-## Colab notebook
+## Colab-ноутбук
 
 Основной ноутбук для GPU:
 
@@ -161,14 +161,14 @@ notebooks/yandex_maps_relevance_colab.ipynb
 - `/content/outputs/strong_ensemble/model_scores.csv`
 - `/content/outputs/strong_ensemble/ensemble_config.json`
 
-Также в ноутбук добавлен agent layer:
+Также в ноутбук добавлен слой агента:
 
-- selection спорных validation-примеров в `agent_validation_cases.jsonl`;
+- отбор спорных validation-примеров в `agent_validation_cases.jsonl`;
 - запись `/content/agent_runner.py`;
-- cached LLM runner с опциональным поиском Serper/Tavily;
-- сравнение agent accuracy с transformer accuracy на одном validation subset.
+- кешируемый LLM runner с опциональным поиском Serper/Tavily;
+- сравнение accuracy агента с accuracy transformer baseline на одном validation subset.
 
-## Agent application
+## Приложение Агента
 
 Опциональное локальное demo-приложение агента:
 
@@ -192,88 +192,88 @@ http://127.0.0.1:7860
 
 Приложение принимает одну пару `запрос + карточка организации`, решает, нужен ли поиск, опционально ходит в Serper/Tavily и возвращает дискретную оценку `0.0`, `0.1` или `1.0` с объяснением.
 
-## Project scoring checklist
+## Чеклист По Баллам
 
 По оригинальному заданию из Colab:
 
 | Требование | Баллы | Что сделано |
 | --- | ---: | --- |
-| Бейзлайн без агента | 2 | TF-IDF, ruBERT, 2-model ensemble; best validation accuracy `0.7067` |
-| Агент с возможностью обращаться к поисковой строке | 4 | `src/agent_runner.py`: OpenAI-compatible LLM, plan/final steps, Serper/Tavily search |
+| Бейзлайн без агента | 2 | TF-IDF, ruBERT, ensemble из 2 моделей; лучшая validation accuracy `0.7067` |
+| Агент с возможностью обращаться к поисковой строке | 4 | `src/agent_runner.py`: OpenAI-compatible LLM, шаги plan/final, поиск Serper/Tavily |
 | Показать, помогает агент или нет | 4 | validation smoke tests на 30 и 100 спорных кейсах; local-only агент не дал стабильного прироста |
-| Доп. идея | optional | lexical few-shot retrieval из train через `--fewshot-path` и `--fewshot-k` |
+| Доп. идея | optional | лексический few-shot retrieval из train через `--fewshot-path` и `--fewshot-k` |
 
-## Current results
+## Текущие Результаты
 
-Validation split: stratified random 80/20 from `data_for_train.jsonl`, seed `42`.
+Validation split: стратифицированное случайное разбиение 80/20 из `data_for_train.jsonl`, seed `42`.
 
-| Run | Classifier | Class weight | Accuracy |
+| Запуск | Классификатор | Веса классов | Accuracy |
 | --- | --- | --- | --- |
 | `artifacts/baseline_tfidf` | `LinearSVC` | none | `0.5872` |
 | `artifacts/baseline_tfidf_balanced` | `LinearSVC` | balanced | `0.5810` |
 | `artifacts/baseline_tfidf_ridge` | `RidgeClassifier` | none | `0.5969` |
 | `artifacts/baseline_tfidf_ridge_balanced` | `RidgeClassifier` | balanced | `0.5794` |
 
-Best local baseline so far: `RidgeClassifier`, accuracy `0.5969`.
+Лучший локальный baseline: `RidgeClassifier`, accuracy `0.5969`.
 
-Weak spot: class `0.1`; it is often confused with both `0.0` and `1.0`.
+Слабое место: класс `0.1`; он часто путается и с `0.0`, и с `1.0`.
 
-Colab transformer runs:
+Запуски transformer-моделей в Colab:
 
-| Model | Accuracy | Notes |
+| Модель | Accuracy | Комментарий |
 | --- | --- | --- |
-| `cointegrated/rubert-tiny2` | `0.6269` | Stronger than TF-IDF, weak recall for `0.1` |
-| `ai-forever/ruBert-base` | `0.6913` | Best run so far; `0.1` recall improved to `0.2442` |
-| `ai-forever/ruBert-base` + logit calibration | `0.6988` | Strong single-model baseline; validation bias `[0.0, -0.8, 0.0]` |
-| `ai-forever/ruBert-base` + `DeepPavlov/rubert-base-cased` ensemble | `0.7067` | Current best; weights `[0.7, 0.3]`, bias `[0.0, -0.8, -0.5]` |
+| `cointegrated/rubert-tiny2` | `0.6269` | Лучше TF-IDF, но слабый recall для `0.1` |
+| `ai-forever/ruBert-base` | `0.6913` | Сильный одиночный ruBERT; recall для `0.1` вырос до `0.2442` |
+| `ai-forever/ruBert-base` + logit calibration | `0.6988` | Сильный single-model baseline; validation bias `[0.0, -0.8, 0.0]` |
+| `ai-forever/ruBert-base` + `DeepPavlov/rubert-base-cased` ensemble | `0.7067` | Текущий лучший результат; веса `[0.7, 0.3]`, bias `[0.0, -0.8, -0.5]` |
 
-Optional next model to try in the ensemble: `xlm-roberta-base`.
+Опциональная следующая модель для ensemble: `xlm-roberta-base`.
 
-Current submission candidate:
+Текущий основной submission-кандидат:
 
 ```text
 /content/outputs/submission_ensemble.csv
 ```
 
-Ensemble submission distribution: `0.0` - 280, `0.1` - 20, `1.0` - 270.
+Распределение предсказаний ensemble submission: `0.0` - 280, `0.1` - 20, `1.0` - 270.
 
-Manual Codex-agent smoke test on 30 transformer-uncertain validation cases:
+Ручной Codex-agent smoke-test на 30 спорных validation-кейсах transformer baseline:
 
-| Model | Accuracy |
+| Модель | Accuracy |
 | --- | ---: |
 | Raw transformer | `0.3333` |
 | Calibrated transformer | `0.4333` |
-| Codex-agent manual judge | `0.6333` |
+| Ручная оценка Codex-agent | `0.6333` |
 
-Details: `reports/codex_agent_validation/summary_30.md`.
+Подробности: `reports/codex_agent_validation/summary_30.md`.
 
-Manual Codex-agent test on the next 100 transformer-uncertain validation cases:
+Ручная проверка Codex-agent на следующих 100 спорных validation-кейсах:
 
-| Model | Accuracy |
+| Модель | Accuracy |
 | --- | ---: |
 | Raw transformer | `0.3500` |
 | Calibrated transformer | `0.4500` |
-| Codex-agent manual judge | `0.4100` |
+| Ручная оценка Codex-agent | `0.4100` |
 
-Details: `reports/codex_agent_validation/summary_100.md`.
+Подробности: `reports/codex_agent_validation/summary_100.md`.
 
-## RouterAI configuration
+## Конфигурация RouterAI
 
-The agent runner is OpenAI-compatible and now defaults to RouterAI:
+Agent runner использует OpenAI-compatible API и по умолчанию настроен на RouterAI:
 
 ```text
 base_url: https://routerai.ru/api/v1
 model: deepseek/deepseek-v4-pro
 ```
 
-Create a private `.env` from the template and paste the real key there:
+Создать приватный `.env` из шаблона и вставить реальные ключи:
 
 ```powershell
 Copy-Item .env.example .env
 notepad .env
 ```
 
-Minimum `.env` values:
+Минимальные значения `.env`:
 
 ```text
 ROUTERAI_API_KEY=...
@@ -282,15 +282,15 @@ AGENT_MODEL=deepseek/deepseek-v4-pro
 SEARCH_PROVIDER=none
 ```
 
-`.env` is ignored by git. Keep `SEARCH_PROVIDER=none` for the first validation run; enable Serper/Tavily only after the cheap smoke test looks useful.
+`.env` игнорируется git. Для полноценного агента с поиском используется `SEARCH_PROVIDER=serper`; для дешёвой проверки без поиска можно временно поставить `SEARCH_PROVIDER=none`.
 
-## Next steps
+## Дальше
 
-1. Use `/content/outputs/submission_ensemble.csv` as the current best submission candidate.
-2. Optional: try adding `xlm-roberta-base` to the ensemble if there is enough GPU time.
-3. Keep the agent result in the report as a checked negative/limited result unless search-enabled or few-shot agent validation improves it.
+1. Использовать `notebooks/submission_ensemble.csv` как основной submission-кандидат.
+2. Агент оставить как реализованную search-capable LLM-часть проекта и как отрицательный результат по качеству.
+3. Опционально пробовать `xlm-roberta-base` в ensemble, если будет дополнительное GPU-время.
 
-Local/Colab runner:
+Запуск агента на validation:
 
 ```bash
 python /content/agent_runner.py \
@@ -304,7 +304,7 @@ python /content/agent_runner.py \
   --evaluate
 ```
 
-Agent run on eval, after provider/model choice:
+Запуск агента на eval после проверки на validation:
 
 ```bash
 python /content/agent_runner.py \

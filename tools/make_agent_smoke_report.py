@@ -25,35 +25,35 @@ def main() -> None:
     correct = sum(result.get("label") == result.get("true_relevance") for result in results)
     used_search = sum(bool(result.get("used_search")) for result in results)
 
-    title = f"Agent Full Validation Run: {len(results)} Cases"
+    title = f"Полный validation-прогон агента: {len(results)} кейсов"
     lines = [
         f"# {title}",
         "",
-        f"Date: {dt.date.today().isoformat()}",
+        f"Дата: {dt.date.today().isoformat()}",
         "",
-        "Command:",
+        "Команда:",
         "",
         "```bash",
         args.command or "See terminal history.",
         "```",
         "",
-        "Configuration:",
+        "Конфигурация:",
         "",
-        "- LLM provider: RouterAI OpenAI-compatible API",
-        "- Model: deepseek/deepseek-v4-pro",
-        "- Search provider: Serper",
-        "- Few-shot examples: lexical top-3 from train split",
-        "- Eval labels were not used",
+        "- LLM-провайдер: RouterAI OpenAI-compatible API",
+        "- Модель: deepseek/deepseek-v4-pro",
+        "- Поиск: Serper",
+        "- Few-shot: top-3 похожих размеченных примера из train",
+        "- Eval-метки не использовались",
         "",
-        "Summary:",
+        "Сводка:",
         "",
-        f"- Completed cases: {len(results)}",
-        f"- Correct predictions: {correct}/{len(results)}",
+        f"- Завершено кейсов: {len(results)}",
+        f"- Правильных ответов: {correct}/{len(results)}",
         f"- Accuracy: {correct / len(results):.4f}",
-        f"- Cases with external search: {used_search}/{len(results)}",
-        "- Runtime status: completed without Python exceptions; JSON responses parsed successfully",
+        f"- Внешний поиск использован: {used_search}/{len(results)}",
+        "- Статус выполнения: Python-ошибок нет; JSON-ответы успешно распарсились",
         "",
-        "Confusion counts:",
+        "Матрица ошибок в виде true -> agent:",
     ]
 
     counts: dict[str, int] = {}
@@ -67,31 +67,31 @@ def main() -> None:
         case = case_by_id.get(result["case_id"], {})
         plan = result.get("plan") or {}
         final = result.get("final") or {}
-        status = "OK" if result.get("label") == result.get("true_relevance") else "ERROR"
+        status = "ВЕРНО" if result.get("label") == result.get("true_relevance") else "ОШИБКА"
 
         lines.extend(
             [
-                f"## Case {index}: {result.get('case_id')} - {status}",
+                f"## Кейс {index}: {result.get('case_id')} - {status}",
                 "",
-                f"- Query: {case.get('Text', '')}",
-                f"- Organization: {case.get('name', '')}",
-                f"- Rubric: {case.get('normalized_main_rubric_name_ru', '')}",
-                f"- Address: {case.get('address', '')}",
-                f"- True label: {result.get('true_relevance')}",
-                f"- Agent label: {result.get('label')}",
-                f"- Final confidence: {final.get('confidence')}",
-                f"- Plan local label: {plan.get('local_label')}",
-                f"- Plan local confidence: {plan.get('local_confidence')}",
-                f"- Plan needs search: {plan.get('needs_search')}",
-                f"- Search actually used: {result.get('used_search')}",
-                f"- Search queries: {json.dumps(plan.get('search_queries') or [], ensure_ascii=False)}",
+                f"- Запрос: {case.get('Text', '')}",
+                f"- Организация: {case.get('name', '')}",
+                f"- Рубрика: {case.get('normalized_main_rubric_name_ru', '')}",
+                f"- Адрес: {case.get('address', '')}",
+                f"- Истинная метка: {result.get('true_relevance')}",
+                f"- Метка агента: {result.get('label')}",
+                f"- Финальная уверенность: {final.get('confidence')}",
+                f"- Локальная метка на этапе plan: {plan.get('local_label')}",
+                f"- Локальная уверенность на этапе plan: {plan.get('local_confidence')}",
+                f"- Plan решил, что нужен поиск: {plan.get('needs_search')}",
+                f"- Поиск фактически использован: {result.get('used_search')}",
+                f"- Поисковые запросы: {json.dumps(plan.get('search_queries') or [], ensure_ascii=False)}",
             ]
         )
 
         if result.get("search_results"):
-            lines.append("- Search results:")
+            lines.append("- Результаты поиска:")
             for block in result["search_results"]:
-                lines.append(f"  - Query: {block.get('query', '')}")
+                lines.append(f"  - Запрос поиска: {block.get('query', '')}")
                 for item in (block.get("results") or [])[:3]:
                     snippet = (item.get("snippet") or "")[:240]
                     lines.append(f"    - {item.get('title', '')} | {item.get('url', '')} | {snippet}")
@@ -99,19 +99,19 @@ def main() -> None:
         lines.extend(
             [
                 "",
-                "Plan evidence:",
+                "Факты на этапе plan:",
                 "",
                 str(plan.get("evidence", "")),
                 "",
-                "Plan explanation:",
+                "Объяснение на этапе plan:",
                 "",
                 str(plan.get("explanation", "")),
                 "",
-                "Final evidence:",
+                "Финальные факты:",
                 "",
                 str(final.get("evidence", "")),
                 "",
-                "Final explanation:",
+                "Финальное объяснение:",
                 "",
                 str(final.get("explanation", "")),
                 "",
