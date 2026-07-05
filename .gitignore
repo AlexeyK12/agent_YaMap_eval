@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+*.key
+secrets/
+__pycache__/
+*.pyc
+outputs/
+artifacts/
+app/*.log
+app/*.err.log
+data/*.jsonl
+data/*.zip
+*.zip

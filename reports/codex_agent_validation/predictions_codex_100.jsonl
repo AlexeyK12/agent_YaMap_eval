@@ -1,0 +1,100 @@
+{"case_id":"valid_508_1773624479","label":0.1,"confidence":0.62,"used_search":false,"explanation":"Restaurant matches the broad cafe intent, but local data does not confirm a veranda or low prices."}
+{"case_id":"valid_1590_1399471349","label":0.1,"confidence":0.60,"used_search":false,"explanation":"High-end Moscow restaurant, but no direct evidence that it is a steak restaurant."}
+{"case_id":"valid_5720_1031683216","label":0.1,"confidence":0.58,"used_search":false,"explanation":"Ritual services match the domain, but the requested name Lilia is not confirmed."}
+{"case_id":"valid_1376_244741104008","label":0.1,"confidence":0.62,"used_search":false,"explanation":"Garage-related doors and gates are adjacent to the query, but not a direct garage result."}
+{"case_id":"valid_3020_215366487128","label":0.1,"confidence":0.61,"used_search":false,"explanation":"Archery and crossbow equipment is related to shooting entertainment, but this is not clearly a shooting range gift service."}
+{"case_id":"valid_6075_153633935741","label":0.1,"confidence":0.57,"used_search":false,"explanation":"The place is a seaside resort-style accommodation, but buffet service is not confirmed."}
+{"case_id":"valid_2614_34472445792","label":1.0,"confidence":0.80,"used_search":false,"explanation":"The organization provides water cargo transport, which directly matches sea freight intent."}
+{"case_id":"valid_1295_1295770677","label":0.0,"confidence":0.76,"used_search":false,"explanation":"A local stadium does not match a query about World Cup stadium photos in Russia."}
+{"case_id":"valid_632_217873481638","label":1.0,"confidence":0.86,"used_search":false,"explanation":"The organization is a tire fitting service, directly matching the query."}
+{"case_id":"valid_1892_234268699476","label":0.0,"confidence":0.88,"used_search":false,"explanation":"The query is about cheap food in Paris, while the organization is in Moscow."}
+{"case_id":"valid_4287_161593191911","label":0.1,"confidence":0.58,"used_search":false,"explanation":"Restaurant equipment is related to food businesses, but the organization is not itself a food company."}
+{"case_id":"valid_4689_225712563889","label":0.1,"confidence":0.61,"used_search":false,"explanation":"A costume shop is related, but rental and children's New Year costumes are not confirmed."}
+{"case_id":"valid_3974_166034677940","label":1.0,"confidence":0.84,"used_search":false,"explanation":"The organization is explicitly a vegetable base, matching the query."}
+{"case_id":"valid_4042_87614738182","label":1.0,"confidence":0.82,"used_search":false,"explanation":"Wholesale fruit and vegetable sales directly match a fruit and vegetable base query."}
+{"case_id":"valid_2682_97426789203","label":0.1,"confidence":0.63,"used_search":false,"explanation":"It is a pharmacy, but local data does not confirm duty or 24-hour status."}
+{"case_id":"valid_4841_1742307270","label":1.0,"confidence":0.86,"used_search":false,"explanation":"Georgian cafe in Nizhny Novgorod directly matches the query."}
+{"case_id":"valid_5950_1601007624","label":0.1,"confidence":0.63,"used_search":false,"explanation":"A grocery store matches products, but 24-hour operation is not confirmed."}
+{"case_id":"valid_1421_76266400266","label":0.1,"confidence":0.51,"used_search":false,"explanation":"The organization is an MFC, but the requested city/person detail is not confirmed."}
+{"case_id":"valid_1030_171181780489","label":0.1,"confidence":0.57,"used_search":false,"explanation":"The restaurant is near the requested area and has fish or seafood mentions, but is not clearly a fish restaurant."}
+{"case_id":"valid_1782_100536652088","label":0.0,"confidence":0.66,"used_search":false,"explanation":"The restaurant data does not match Georgian cuisine."}
+{"case_id":"valid_720_1157929168","label":0.1,"confidence":0.56,"used_search":false,"explanation":"An auto service may handle suspension repairs, but the specific Lada Kalina tie-rod service is not confirmed."}
+{"case_id":"valid_4991_15835406658","label":0.0,"confidence":0.69,"used_search":false,"explanation":"A beer restaurant does not match a sushi bar query."}
+{"case_id":"valid_2740_1042598385","label":0.1,"confidence":0.63,"used_search":false,"explanation":"The organization is tire fitting, but 24-hour service is not confirmed."}
+{"case_id":"valid_4599_1636047338","label":1.0,"confidence":0.82,"used_search":false,"explanation":"Sushi Wok in the requested district directly matches sushi restaurant intent."}
+{"case_id":"valid_1911_1097682790","label":1.0,"confidence":0.81,"used_search":false,"explanation":"The bar/pub/restaurant in Mytishchi matches a beer restaurant query."}
+{"case_id":"valid_464_197820929239","label":1.0,"confidence":0.80,"used_search":false,"explanation":"The orthopedic salon sells compression products, matching the query."}
+{"case_id":"valid_1003_73732260894","label":0.1,"confidence":0.54,"used_search":false,"explanation":"A clothing market is market-related, but not clearly a flea market."}
+{"case_id":"valid_6713_172016579081","label":0.1,"confidence":0.61,"used_search":false,"explanation":"It is a restaurant in Chelyabinsk, but New Year night programming is not confirmed."}
+{"case_id":"valid_3638_1383626349","label":0.0,"confidence":0.67,"used_search":false,"explanation":"A Georgian restaurant does not match a fish restaurant query."}
+{"case_id":"valid_6404_8487306654","label":0.1,"confidence":0.63,"used_search":false,"explanation":"Computer repair matches the service area, but at-home repair is not confirmed."}
+{"case_id":"valid_6815_1036034887","label":0.1,"confidence":0.55,"used_search":false,"explanation":"A Moscow restaurant is related, but steak specialization and the requested metro area are not confirmed."}
+{"case_id":"valid_4299_1236588010","label":0.1,"confidence":0.55,"used_search":false,"explanation":"The hotel is related to hotel queries, but a restaurant inside the hotel is not confirmed."}
+{"case_id":"valid_3048_28529381907","label":1.0,"confidence":0.85,"used_search":false,"explanation":"Manipulator truck rental directly matches the flatbed/manipulator rental query."}
+{"case_id":"valid_3738_15872010788","label":1.0,"confidence":0.84,"used_search":false,"explanation":"The organization is an auto service in Efremov, directly matching the query."}
+{"case_id":"valid_3551_88547830471","label":0.1,"confidence":0.57,"used_search":false,"explanation":"The lighting store is related to lamps and chandeliers, but online-store intent is not confirmed."}
+{"case_id":"valid_498_179257944129","label":0.0,"confidence":0.83,"used_search":false,"explanation":"An infectious disease hospital department does not match pacemaker surgery pricing."}
+{"case_id":"valid_5099_193882161623","label":0.0,"confidence":0.86,"used_search":false,"explanation":"A residential complex in another region does not match house sales in the requested Omsk-area settlement."}
+{"case_id":"valid_2460_1595172103","label":1.0,"confidence":0.87,"used_search":false,"explanation":"Tattoo salon in Sochi directly matches the query."}
+{"case_id":"valid_764_205342271081","label":0.1,"confidence":0.56,"used_search":false,"explanation":"A vehicle service is related, but starter and alternator repair is not confirmed."}
+{"case_id":"valid_6742_115285337463","label":0.1,"confidence":0.60,"used_search":false,"explanation":"Piercing service is relevant, but children's ear piercing is not confirmed."}
+{"case_id":"valid_763_1396378733","label":1.0,"confidence":0.72,"used_search":false,"explanation":"The supermarket is a shop and reviews mention round-the-clock operation issues, so 24-hour intent is supported."}
+{"case_id":"valid_2447_98642622521","label":1.0,"confidence":0.78,"used_search":false,"explanation":"The Michurinsk food business offers pizza according to reviews, matching the cafe pizza query."}
+{"case_id":"valid_4605_51080009284","label":0.1,"confidence":0.62,"used_search":false,"explanation":"The store sells dance clothing, but it is not located in the requested YuZAO area."}
+{"case_id":"valid_6683_57801857188","label":0.1,"confidence":0.59,"used_search":false,"explanation":"The mosque is in Perm Krai, but excursions are not confirmed."}
+{"case_id":"valid_792_1743455920","label":1.0,"confidence":0.76,"used_search":false,"explanation":"Tire fitting on Efremova Street matches the auto-service query wording."}
+{"case_id":"valid_3932_1394135289","label":0.1,"confidence":0.60,"used_search":false,"explanation":"The company sells larch boards, but the requested Ryazansky Prospekt location is not confirmed."}
+{"case_id":"valid_1573_1015336884","label":1.0,"confidence":0.82,"used_search":false,"explanation":"A renovation and interior design company directly matches the broad repair query."}
+{"case_id":"valid_4421_158838522262","label":0.0,"confidence":0.88,"used_search":false,"explanation":"The query is about cheap food in Paris, while the coffee shop is in Moscow."}
+{"case_id":"valid_6391_213162230790","label":1.0,"confidence":0.82,"used_search":false,"explanation":"Vegan cafe in Moscow directly matches vegetarian restaurant intent."}
+{"case_id":"valid_3816_145499906462","label":1.0,"confidence":0.84,"used_search":false,"explanation":"A Ryazan sushi and rolls shop directly matches the rolls cafe query."}
+{"case_id":"valid_5522_64523200858","label":0.1,"confidence":0.55,"used_search":false,"explanation":"The restaurant is in Voronezh, but dance floor, low price, and left-bank constraints are not confirmed."}
+{"case_id":"valid_4590_229470176637","label":0.1,"confidence":0.54,"used_search":false,"explanation":"A regional health ministry is related to public health, but the career/workplace intent is not directly answered."}
+{"case_id":"valid_6134_117993504235","label":0.1,"confidence":0.60,"used_search":false,"explanation":"It is a place to eat, but 24-hour operation is not confirmed."}
+{"case_id":"valid_697_200764883196","label":0.1,"confidence":0.62,"used_search":false,"explanation":"The organization is tire fitting, but truck tire fitting is not confirmed."}
+{"case_id":"valid_5138_78837152883","label":0.1,"confidence":0.57,"used_search":false,"explanation":"Apartments are accommodation, but they are not a capsule hotel."}
+{"case_id":"valid_5568_1173528284","label":0.1,"confidence":0.62,"used_search":false,"explanation":"Fishing goods match part of the hunter/fisherman intent, but hunting goods are not confirmed."}
+{"case_id":"valid_5420_1125548817","label":0.1,"confidence":0.57,"used_search":false,"explanation":"The organization repairs electronics, but tool repair is not confirmed."}
+{"case_id":"valid_4229_186654588613","label":0.1,"confidence":0.57,"used_search":false,"explanation":"It is a notary in Saint Petersburg, but proximity to Tavrichesky Palace is not confirmed."}
+{"case_id":"valid_2312_166613428563","label":0.1,"confidence":0.58,"used_search":false,"explanation":"The car wash provides tire fitting, but truck tire fitting is not confirmed."}
+{"case_id":"valid_2235_1620824238","label":0.0,"confidence":0.68,"used_search":false,"explanation":"A burger fast-food restaurant does not match an Italian restaurant query."}
+{"case_id":"valid_4265_202224674371","label":0.1,"confidence":0.60,"used_search":false,"explanation":"It is a restaurant, but a New Year program for 2018 is not confirmed."}
+{"case_id":"valid_2669_152034006960","label":1.0,"confidence":0.77,"used_search":false,"explanation":"A project organization directly matches the design-organization part of the construction/design query."}
+{"case_id":"valid_4446_21790861548","label":0.1,"confidence":0.55,"used_search":false,"explanation":"A restaurant is food-related, but fettuccine is not confirmed in the local data."}
+{"case_id":"valid_5086_171672052301","label":1.0,"confidence":0.88,"used_search":false,"explanation":"The organization is a sushi bar in Ryazan, directly matching the query."}
+{"case_id":"valid_3448_230997175730","label":0.1,"confidence":0.58,"used_search":false,"explanation":"The kindergarten is in Vsevolozhsk district, but private status is not confirmed."}
+{"case_id":"valid_583_1057428377","label":1.0,"confidence":0.72,"used_search":false,"explanation":"The noisy query appears to mean guest house, and the organization is accommodation."}
+{"case_id":"valid_4997_43822260995","label":0.1,"confidence":0.56,"used_search":false,"explanation":"The restaurant is in Kazan, but Tatar cuisine is not confirmed."}
+{"case_id":"valid_1807_178985681134","label":0.1,"confidence":0.60,"used_search":false,"explanation":"A Moscow travel agency can fit tour purchase intent, but a Sochi flight package is not confirmed."}
+{"case_id":"valid_2537_1076384842","label":0.1,"confidence":0.61,"used_search":false,"explanation":"The Irkutsk restaurant serves some fish dishes, but it is not clearly a fish restaurant."}
+{"case_id":"valid_4789_31075054813","label":1.0,"confidence":0.88,"used_search":false,"explanation":"The Chelyabinsk banquet venue is explicitly suitable for weddings."}
+{"case_id":"valid_5989_15047994068","label":0.1,"confidence":0.56,"used_search":false,"explanation":"An auto service is related, but tire fitting is not confirmed."}
+{"case_id":"valid_5919_1605431329","label":1.0,"confidence":0.80,"used_search":false,"explanation":"The organization name directly matches the Ping Pong query."}
+{"case_id":"valid_5687_199592160216","label":1.0,"confidence":0.88,"used_search":false,"explanation":"Pro Body is a massage salon and directly matches the body massage query."}
+{"case_id":"valid_5915_121568605966","label":1.0,"confidence":0.74,"used_search":false,"explanation":"The organization is a hospital, matching the hospital query despite vague wording."}
+{"case_id":"valid_1833_103319931090","label":0.1,"confidence":0.60,"used_search":false,"explanation":"A medical clinic is related to testing, but PCR test availability is not confirmed."}
+{"case_id":"valid_1355_159968606299","label":0.1,"confidence":0.64,"used_search":false,"explanation":"The organization is oncological, but it is not the Kashirka location requested."}
+{"case_id":"valid_6097_59025898389","label":0.0,"confidence":0.62,"used_search":false,"explanation":"A general cafe in Obninsk does not match a sushi restaurant query."}
+{"case_id":"valid_2499_1104331781","label":1.0,"confidence":0.88,"used_search":false,"explanation":"A fire and rescue unit directly matches the city fire department query."}
+{"case_id":"valid_3579_1783336309","label":0.1,"confidence":0.59,"used_search":false,"explanation":"The beauty salon provides haircuts, but a children's hairdresser specialization is not confirmed."}
+{"case_id":"valid_1906_1206611066","label":0.1,"confidence":0.58,"used_search":false,"explanation":"The restaurant serves meat dishes, but steak specifically is not confirmed."}
+{"case_id":"valid_2881_1179401771","label":0.1,"confidence":0.57,"used_search":false,"explanation":"It is a driving school, but not the requested Prime Auto driving school."}
+{"case_id":"valid_2234_1039037679","label":0.1,"confidence":0.62,"used_search":false,"explanation":"It is an auto service/dealer, but for Toyota rather than Nissan."}
+{"case_id":"valid_2411_128563852713","label":1.0,"confidence":0.72,"used_search":false,"explanation":"The organization helps with taxi licensing and related paperwork, matching taxi registration intent."}
+{"case_id":"valid_5849_31831864095","label":0.1,"confidence":0.55,"used_search":false,"explanation":"It is a children's camp, but the port-specific qualifier is not confirmed."}
+{"case_id":"valid_3280_206562056886","label":0.1,"confidence":0.58,"used_search":false,"explanation":"A notable Moscow restaurant is related, but a Michelin star is not confirmed in local data."}
+{"case_id":"valid_4317_58274951245","label":0.1,"confidence":0.59,"used_search":false,"explanation":"The restaurant is in Moscow and serves seafood-adjacent dishes, but oysters are not confirmed."}
+{"case_id":"valid_6141_141273601239","label":0.1,"confidence":0.58,"used_search":false,"explanation":"The bar and kitchen offers snacks, but late-night availability is not confirmed."}
+{"case_id":"valid_5643_57529776313","label":0.1,"confidence":0.58,"used_search":false,"explanation":"The cafe is near Belorusskaya and has fish mentions, but it is not a fish restaurant."}
+{"case_id":"valid_6265_129773538900","label":1.0,"confidence":0.88,"used_search":false,"explanation":"The balcony company explicitly provides insulation and finishing of balconies/loggias."}
+{"case_id":"valid_2191_1207173641","label":1.0,"confidence":0.74,"used_search":false,"explanation":"A Moscow Georgian restaurant fits the broad eastern/Caucasian restaurant intent."}
+{"case_id":"valid_5319_212414473965","label":0.1,"confidence":0.51,"used_search":false,"explanation":"It is a service center, but consumer-rights/legal intent is not addressed."}
+{"case_id":"valid_2293_66424807877","label":1.0,"confidence":0.74,"used_search":false,"explanation":"Ozon is an internet-shop ecosystem and the location is a pickup point."}
+{"case_id":"valid_423_154608586701","label":0.0,"confidence":0.68,"used_search":false,"explanation":"A car wash does not match tire fitting."}
+{"case_id":"valid_290_163310861978","label":0.1,"confidence":0.62,"used_search":false,"explanation":"The organization is a car wash, but self-service format is not confirmed."}
+{"case_id":"valid_5597_1695218755","label":0.1,"confidence":0.62,"used_search":false,"explanation":"A shopping center matches the retail part, but entertainment-center features are not confirmed."}
+{"case_id":"valid_6276_1266489024","label":0.1,"confidence":0.56,"used_search":false,"explanation":"An auto service is related, but tire fitting is not confirmed."}
+{"case_id":"valid_385_11599997010","label":1.0,"confidence":0.92,"used_search":false,"explanation":"Vnukovo Premium Outlet directly matches the query."}
+{"case_id":"valid_688_1796569579","label":0.1,"confidence":0.59,"used_search":false,"explanation":"The orthopedic salon is in Kaliningrad, but the Yakovlev detail is not confirmed."}
+{"case_id":"valid_1350_36967190263","label":1.0,"confidence":0.84,"used_search":false,"explanation":"A sushi bar with praised rolls directly matches the roll cafe query."}
+{"case_id":"valid_3449_1197606102","label":0.1,"confidence":0.57,"used_search":false,"explanation":"The auto-parts store is related to car batteries, but batteries and warehouse sale are not confirmed."}
