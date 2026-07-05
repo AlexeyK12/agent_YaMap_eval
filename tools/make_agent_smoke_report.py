@@ -25,8 +25,9 @@ def main() -> None:
     correct = sum(result.get("label") == result.get("true_relevance") for result in results)
     used_search = sum(bool(result.get("used_search")) for result in results)
 
+    title = f"Agent Full Validation Run: {len(results)} Cases"
     lines = [
-        "# Agent Full Smoke Test: 5 Validation Cases",
+        f"# {title}",
         "",
         f"Date: {dt.date.today().isoformat()}",
         "",

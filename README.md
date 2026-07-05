@@ -1,5 +1,19 @@
 # DLS final project: Yandex Maps relevance
 
+## Project Result
+
+This repository contains two complementary parts:
+
+1. **Strong non-agent baseline:** fine-tuned Russian transformer ensemble.
+   Best validation accuracy: **0.7067**.
+   Current best submission file: `notebooks/submission_ensemble.csv`.
+
+2. **Search-enabled LLM agent:** OpenAI-compatible RouterAI LLM + Serper search + lexical few-shot examples.
+   Full validation smoke run: **20 cases, 10 correct, accuracy 0.5000, search used in 7/20 cases, 0 runtime/JSON errors**.
+   Detailed report: `reports/agent_full_validation_20.md`.
+
+Main conclusion: the agent is implemented and works technically, including external search, but it did **not** beat the strong transformer baseline on validation. The final project therefore follows the task option: build a strong baseline, implement a search-capable agent, and show that the agent did not provide stable quality improvement for this dataset.
+
 Рабочая задача: предсказывать релевантность организации запросу на Яндекс.Картах.
 
 Классы:

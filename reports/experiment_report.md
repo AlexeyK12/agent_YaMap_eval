@@ -326,6 +326,60 @@ python /content/agent_runner.py \
   --submission-csv /content/outputs/submission_agent.csv
 ```
 
+## RouterAI + Serper Agent Validation
+
+After connecting the real API stack, the agent was tested end-to-end on the prepared validation subset:
+
+```text
+LLM provider: RouterAI OpenAI-compatible API
+model: deepseek/deepseek-v4-pro
+search provider: Serper
+few-shot: lexical top-3 labeled train examples
+cases: 20 validation examples
+```
+
+Command:
+
+```bash
+python src/agent_runner.py \
+  --cases outputs/agent_validation_cases.jsonl \
+  --out outputs/agent_validation_results_serper_30.jsonl \
+  --limit 30 \
+  --search-provider serper \
+  --fewshot-path outputs/agent_fewshot_train_examples.jsonl \
+  --fewshot-k 3 \
+  --evaluate \
+  --overwrite
+```
+
+The command requested 30 cases, but the currently prepared validation file contained 20 cases.
+
+Results:
+
+| Metric | Value |
+| --- | ---: |
+| Completed cases | 20 |
+| Correct predictions | 10 |
+| Accuracy | `0.5000` |
+| Cases with external search | 7 |
+| Runtime / JSON errors | 0 |
+
+Confusion counts:
+
+| True -> Agent | Count |
+| --- | ---: |
+| `0.0 -> 0.0` | 5 |
+| `0.0 -> 1.0` | 3 |
+| `0.1 -> 0.0` | 1 |
+| `0.1 -> 1.0` | 2 |
+| `1.0 -> 0.0` | 3 |
+| `1.0 -> 0.1` | 1 |
+| `1.0 -> 1.0` | 5 |
+
+Detailed case-by-case report: `reports/agent_full_validation_20.md`.
+
+Conclusion: the API agent works technically, including external search and JSON parsing, but this validation run does not beat the calibrated transformer/ensemble baseline. The best submission candidate remains the transformer ensemble, while the agent is kept as the required search-capable LLM-agent component and as evidence for the negative result: search-enabled LLM reasoning did not provide stable quality improvement on this dataset.
+
 ## Optional Agent Application
 
 In addition to the required batch runner, a minimal local web application was added as an optional demo:
