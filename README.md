@@ -131,25 +131,23 @@ fewshot_k: 3
 ## Состав репозитория
 
 ```text
-src/baseline_tfidf.py              классический TF-IDF бейзлайн
-src/prepare_agent_cases.py         подготовка JSONL-файлов для агента
-src/agent_runner.py                агент с RouterAI, Serper/Tavily и кешем
+src/baseline_tfidf.py                            классический TF-IDF бейзлайн
+src/prepare_agent_cases.py                       подготовка JSONL-файлов для агента
+src/agent_runner.py                              агент с RouterAI, Serper/Tavily и кешем
 
-app/agent_web_app.py               опциональный локальный интерфейс к агенту
-app/README.md                      запуск локального интерфейса
+app/agent_web_app.py                             опциональный локальный интерфейс к агенту
+app/README.md                                    запуск локального интерфейса
 
 notebooks/yandex_maps_relevance_colab.ipynb
-notebooks/submission_ensemble.csv  итоговые предсказания для data_for_eval.jsonl
+notebooks/submission_ensemble.csv                итоговые предсказания для data_for_eval.jsonl
 notebooks/submission_transformer.csv
 
-reports/agent_full_validation_20.md подробный прогон агента
-reports/agent_full_smoke_5.md      короткая техническая проверка агента
+reports/agent_full_validation_20.md              подробный прогон агента
+reports/agent_full_smoke_5.md                    короткая техническая проверка агента
 
-.env.example                       шаблон переменных окружения
-requirements.txt                   зависимости
+.env.example                                     шаблон переменных окружения
+requirements.txt                                 зависимости
 ```
-
-В репозитории нет приватных ключей API и сырых данных. `.env`, `data/`, `outputs/` и большие артефакты обучения исключены из git.
 
 ## Воспроизведение
 
@@ -207,12 +205,9 @@ SEARCH_PROVIDER=serper
 SERPER_API_KEY=...
 ```
 
-`.env` не добавляется в git.
-
 ## Вывод
 
 Сильнейшее решение в проекте - трансформерный ансамбль с точностью `0.7067` на валидации. Агент с поиском реализован и проверен, но в текущей конфигурации не дал прироста качества. Это важный результат проекта: для данной задачи локально дообученный классификатор оказался надёжнее, чем более дорогой агентный подход с поиском.
 
-## Технологии
 
-![Использованные технологии](assets/tech_stack.svg)
+!(assets/tech_stack.svg)
