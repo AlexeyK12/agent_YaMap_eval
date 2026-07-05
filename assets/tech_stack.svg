@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Использованные технологии">
+  <rect width="1200" height="300" rx="28" fill="#0f172a"/>
+  <text x="54" y="64" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="900" fill="#ffffff">Использованные технологии</text>
+  <text x="54" y="94" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" fill="#cbd5e1">Классификация, дообучение трансформеров, агент с поиском и локальный интерфейс</text>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" font-weight="800">
+    <g transform="translate(54,132)"><rect width="190" height="48" rx="14" fill="#3776ab"/><circle cx="28" cy="24" r="15" fill="#ffd43b"/><text x="28" y="30" text-anchor="middle" fill="#172033">Py</text><text x="58" y="30" fill="#ffffff">Python</text></g>
+    <g transform="translate(264,132)"><rect width="190" height="48" rx="14" fill="#ee4c2c"/><circle cx="28" cy="24" r="15" fill="#ffffff"/><text x="28" y="30" text-anchor="middle" fill="#ee4c2c">T</text><text x="58" y="30" fill="#ffffff">PyTorch</text></g>
+    <g transform="translate(474,132)"><rect width="220" height="48" rx="14" fill="#ffcc4d"/><circle cx="28" cy="24" r="15" fill="#0f172a"/><text x="28" y="30" text-anchor="middle" fill="#ffcc4d">HF</text><text x="58" y="30" fill="#172033">Transformers</text></g>
+    <g transform="translate(714,132)"><rect width="190" height="48" rx="14" fill="#f7931e"/><circle cx="28" cy="24" r="15" fill="#ffffff"/><text x="28" y="30" text-anchor="middle" fill="#f7931e">sk</text><text x="58" y="30" fill="#ffffff">scikit-learn</text></g>
+    <g transform="translate(924,132)"><rect width="190" height="48" rx="14" fill="#150458"/><circle cx="28" cy="24" r="15" fill="#ffffff"/><text x="28" y="30" text-anchor="middle" fill="#150458">pd</text><text x="58" y="30" fill="#ffffff">pandas</text></g>
+    <g transform="translate(54,204)"><rect width="190" height="48" rx="14" fill="#f9ab00"/><circle cx="28" cy="24" r="15" fill="#ffffff"/><text x="28" y="30" text-anchor="middle" fill="#f9ab00">C</text><text x="58" y="30" fill="#172033">Colab</text></g>
+    <g transform="translate(264,204)"><rect width="190" height="48" rx="14" fill="#2563eb"/><circle cx="28" cy="24" r="15" fill="#ffffff"/><text x="28" y="30" text-anchor="middle" fill="#2563eb">R</text><text x="58" y="30" fill="#ffffff">RouterAI</text></g>
+    <g transform="translate(474,204)"><rect width="190" height="48" rx="14" fill="#16a34a"/><circle cx="28" cy="24" r="15" fill="#ffffff"/><text x="28" y="30" text-anchor="middle" fill="#16a34a">S</text><text x="58" y="30" fill="#ffffff">Serper</text></g>
+    <g transform="translate(684,204)"><rect width="190" height="48" rx="14" fill="#64748b"/><circle cx="28" cy="24" r="15" fill="#ffffff"/><text x="28" y="30" text-anchor="middle" fill="#64748b">UI</text><text x="58" y="30" fill="#ffffff">HTTP UI</text></g>
+  </g>
+</svg>

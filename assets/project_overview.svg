@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="Обзор решения проекта">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#eef4ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1e293b" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <text x="54" y="62" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="32" font-weight="800" fill="#0f172a">Релевантность организаций на Яндекс.Картах</text>
+  <text x="54" y="94" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" fill="#475569">Финальное решение: сильный трансформерный ансамбль + проверенный агент с внешним поиском</text>
+  <g filter="url(#shadow)">
+    <rect x="54" y="132" width="220" height="138" rx="18" fill="#ffffff"/>
+    <rect x="74" y="152" width="48" height="48" rx="14" fill="#dbeafe"/>
+    <text x="98" y="185" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" fill="#1d4ed8">D</text>
+    <text x="74" y="222" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#0f172a">Данные</text>
+    <text x="74" y="248" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" fill="#64748b">запрос + карточка</text>
+  </g>
+  <path d="M290 201 H360" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M360 201 l-12 -9 v18 z" fill="#94a3b8"/>
+  <g filter="url(#shadow)">
+    <rect x="384" y="116" width="272" height="170" rx="20" fill="#ffffff"/>
+    <rect x="408" y="140" width="54" height="54" rx="16" fill="#dcfce7"/>
+    <text x="435" y="176" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" fill="#15803d">B</text>
+    <text x="408" y="220" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="800" fill="#0f172a">Ансамбль BERT</text>
+    <text x="408" y="247" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" fill="#64748b">ruBERT + DeepPavlov</text>
+    <text x="408" y="271" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#15803d">точность 0.7067</text>
+  </g>
+  <path d="M674 201 H744" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M744 201 l-12 -9 v18 z" fill="#94a3b8"/>
+  <g filter="url(#shadow)">
+    <rect x="768" y="116" width="180" height="170" rx="20" fill="#ffffff"/>
+    <rect x="792" y="140" width="54" height="54" rx="16" fill="#fee2e2"/>
+    <text x="819" y="176" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" fill="#b91c1c">A</text>
+    <text x="792" y="220" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="800" fill="#0f172a">Агент</text>
+    <text x="792" y="247" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" fill="#64748b">RouterAI + Serper</text>
+    <text x="792" y="271" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" fill="#b91c1c">0.5000 на 20</text>
+  </g>
+  <path d="M966 201 H1036" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M1036 201 l-12 -9 v18 z" fill="#94a3b8"/>
+  <g filter="url(#shadow)">
+    <rect x="1060" y="132" width="86" height="138" rx="18" fill="#ffffff"/>
+    <rect x="1080" y="152" width="46" height="52" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <path d="M1090 169 H1116 M1090 181 H1116 M1090 193 H1106" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+    <text x="1103" y="236" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" fill="#0f172a">CSV</text>
+  </g>
+  <text x="54" y="322" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14" fill="#64748b">Итоговый артефакт: notebooks/submission_ensemble.csv, 570 предсказаний relevance для data_for_eval.jsonl</text>
+</svg>
